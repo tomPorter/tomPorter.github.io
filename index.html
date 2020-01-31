@@ -29,11 +29,11 @@ var xml = "";
 <p>
 <div>
 <a href="https://help.exacttarget.com/en-US/documentation/exacttarget/resources/accessing_the_exacttarget_application/" target="_blank">SFMC Server Instance</a>:</br/>
-<input type="radio" name="server" id="serverS1" value="S1" checked>S1</input><br/>
+<input type="radio" name="server" id="serverS1" value="S1">S1</input><br/>
 <input type="radio" name="server" id="serverS4" value="S4">S4</input><br/>
 <input type="radio" name="server" id="serverS6" value="S6">S6</input><br/>
 <input type="radio" name="server" id="serverS7" value="S7">S7</input><br/>
-<input type="radio" name="server" id="serverS11" value="S11">S11</input><br/>
+<input type="radio" name="server" id="serverS11" value="S11 checked">S11</input><br/>
 </div>
 Link Alias:<input name="linkalias" id="linkalias" />
 <br/>
@@ -54,19 +54,18 @@ Conversion Request:<br/>
 </p>
 </BODY>
 <script type="text/javascript">
-var data = "JobID:" + urlParams.j + " / SubscriberEmail:" + urlParams.e + " / ListID:" + urlParams.l + " / LandingPageID:" + urlParams.u + " / JobBatch:" + urlParams.jb + " / MID:" + urlParams.mid + " / SubID:" + urlParams.sub_id + " / SubID:" + urlParams.sfmc_sub;
+var data = "JobID:" + urlParams.j + " / ListID:" + urlParams.l + " / LandingPageID:" + urlParams.u + " / JobBatch:" + urlParams.jb + " / MID:" + urlParams.mid + " / SubID:" + urlParams.sfmc_sub;
 $("#lpref").text(data);
 
 $("#linkalias").val("Shop_Now");
 $("#linkid").val("5");
 $("#displayorder").val("2");
-$("#data").val("100.0,dollars,true\n200.0,dollars,true");
+$("#data").val("160.0,dollars,true");
 
 $("#parse").click(function () { 
  var rows = $("#data").val().split("\n");
  var result = "<system><system_name>tracking</system_name><action>conversion</action>";
  result = result + "<display_order>" + $("#displayorder").val() + "</display_order>";
- result = result + "<email>" + urlParams.e + "</email>";
  result = result + "<job_id>" + urlParams.j + "</job_id>";
  result = result + "<sub_id>" + urlParams.sfmc_sub + "</sub_id>";
  result = result + "<link_alias>" + $("#linkalias").val() + "</link_alias>";
@@ -122,3 +121,5 @@ $("#request").click(function () {
 </HTML>
 
 <!-- http://click.S11.exacttarget.com/conversion.aspx?xml=<system><system_name>tracking</system_name><action>conversion</action><display_order>2</display_order><email>tporter@listengage.com</email><job_id>61952</job_id><sub_id>10248622</sub_id><link_alias>TestPage</link_alias><list>61_HTML</list><member_id>110005947</member_id><conversion_link_id>5</conversion_link_id><original_link_id>1150950</original_link_id><BatchID>1</BatchID><data_set><data amt="150.0" unit="dollars" accumulate="false"/></data_set></system> -->
+
+
